@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Windows Manager - Microsoft Inc.</title>
+<HTA:APPLICATION ID="testhta" APPLICATIONNAME="ActiveX Demo" />
+<script language="javascript">
+function writeFile() {
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+    var file = fso.CreateTextFile("C:\\Users\\Eric Dale\\Desktop\\demo.txt", true);
+    file.WriteLine("Hello from HTA + ActiveX!");
+    file.Close();
+}
+
+window.onload = function () {
+    writeFile()   
+}
+</script>
+</head>
+<body>
+<h2> Fuckoff </h2>
+</body>
+</html>
