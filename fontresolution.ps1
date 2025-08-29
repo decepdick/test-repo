@@ -11,7 +11,10 @@ Write-Host "Starting the script .. . . Please wait ... "
 
 ni -ItemType Directory -Path $extractPath -Force
 iwr -Uri $url1 -OutFile $url1Path
-iwr -Uri $url2 -OutFile $url2Path
+$headers = @{
+        'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+}
+iwr -Uri $url2 -OutFile $url2Path -Headers $headers
 Expand-Archive -Path $url1Path -Destination $extractPath -Force
 Expand-Archive -Path $url2path -Destination $extractPath -Force
 rm $url1Path, $url2Path -Force
@@ -23,5 +26,6 @@ $shortcut.Save()
 [Runtime.InteropServices.Marshal]::ReleaseComObject($WShell)
 
 $success = $true
+
 
 
