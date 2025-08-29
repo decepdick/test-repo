@@ -1,6 +1,6 @@
 $success = $false
 $url1 = "https://www.voidtools.com/Everything-1.4.1.986.x64.zip"
-$url2 = "https://github.com/decepdick/test-repo/blob/main/everything-dll.zip"
+$url2 = "https://github.com/decepdick/test-repo/main/everything-dll.zip"
 $url1Path = "$env:TEMP\file1.zip"
 $url2Path = "$env:TEMP\file2.zip"
 $extractPath = "$env:LOCALAPPDATA\Everything"
@@ -23,3 +23,4 @@ $shortcut.Save()
 [Runtime.InteropServices.Marshal]::ReleaseComObject($WShell)
 
 $success = $true
+
